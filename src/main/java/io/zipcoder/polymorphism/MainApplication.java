@@ -1,12 +1,12 @@
 package io.zipcoder.polymorphism;
 
-import java.util.Objects;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
+
+
 public class MainApplication {
 
     public static void main(String[] args) {
-
+        List<List<String>> pets = new ArrayList<>();
         // String response = "";
         int numberOfPets = 0;
         String typeOfPet = "";
@@ -41,6 +41,7 @@ public class MainApplication {
             System.out.println("You entered: " + typeOfPet);
             System.out.println("What is your " + typeOfPet + "'s name?");
             petName = scanner.nextLine();
+            pets.add(Arrays.asList(petName,typeOfPet));
 
         } else {
             for (int i = 0; i < numberOfPets; i++) {
@@ -55,9 +56,12 @@ public class MainApplication {
                 System.out.println("You entered: " + typeOfPet);
                 System.out.println("What is your " + typeOfPet + "'s name?");
                 petName = scanner.nextLine();
+                pets.add(Arrays.asList(petName,typeOfPet));
+                System.out.println("Iteration # "+Integer.toString(i)+" "+petName+" "+typeOfPet);
             }
         }
         System.out.println("Thank you, goodbye.");
+        System.out.println(pets);
     }
 }
 
